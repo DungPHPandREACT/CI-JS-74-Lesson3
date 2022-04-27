@@ -1,0 +1,80 @@
+// Compiled CSS
+
+// .info {
+//   color: green;
+// }
+
+// .info .info__name {
+//   color: red;
+// }
+
+// SCSS: Sử dụng biến
+$colorMain: rgb(246, 4, 246);
+$top: 60px;
+$bottom: 60px;
+
+// SCSS: Quy tắc Mixin
+//-Khai báo
+// @mixin ten_mixin{
+//thuộc tính
+//}
+// @mixin ten_mixin($thamso1, $thamso2){
+//thuộc tính
+// }
+//-Sử dụng
+// @include ten_mixin
+
+// @mixin marginElement {
+//   margin-top: 50px;
+//   margin-bottom: 50px;
+// }
+
+@mixin marginElement($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+// SCSS: Quy tắc lồng nhau
+// .info {
+//   color: green;
+
+//   //   .info__name {
+//   //     color: red;
+//   //   }
+
+//   &__name {
+//     color: $colorMain;
+//     @include marginElement($top, $bottom);
+//   }
+
+//   &__age:after {
+//     display: block;
+//     content: 'test';
+//   }
+
+//   &__gender:hover {
+//     font-size: 20px;
+//   }
+// }
+
+// SCSS: Quy tắc kế thừa
+.info__name {
+  font-size: 30px;
+  color: green;
+}
+
+.info__age {
+  @extend .info__name;
+  font-weight: bold;
+}
+
+// Viết theo kiểu css
+// .info__age,
+// .info__name {
+//   font-size: 30px;
+//   color: green;
+// }
+
+// .info__name {
+//   font-weight: bold;
+// }
